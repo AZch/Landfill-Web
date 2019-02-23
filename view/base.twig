@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Required meta tags -->
+    	<meta charset="utf-8">
+   		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   		<!-- Bootstrap CSS -->
+			<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="	sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+			<script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+			<link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+			
+			<script src="/js/scripts.js"></script>
+		<title>
+			Свалка не круто
+		</title>
+
+		<style>
+		   body {
+		    /*background-image: url(images/background.png);  Путь к фоновому изображению */
+		    background-attachment: fixed; /* Фиксируем фон веб-страницы */
+			background-position: center center;
+			background-color:rgb(233, 236, 240);
+		   }
+		
+		</style>
+	</head>
+	<body>
+	    <!-- Optional JavaScript -->
+	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    
+	    
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<img src="images/trash.png" class="navbar-brand" alt="Navbar">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				  <ul class="navbar-nav">
+					<li class="nav-item active">
+					  <a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="/">Волонтерства</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="/">События свалок</a>
+					</li>
+                    <li class="nav-item">
+                        <a class="nav-link{% if admin %} active {% endif %}" href="/admin">Редактирование</a>
+                    </li>
+                    {% if admin %}
+					    <button type="button" class="btn btn-primary btn-sm btn-menu admin" onclick="landfill.create()" >Добавить свалку</button>
+                    {% endif %}
+				  </ul>
+				</div>
+		</nav>
+		<!-- Modal -->
+		<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				<div class="modal-content" id="modal-content">
+					
+				</div>
+			</div>
+		</div>
+
+        <main role="main">
+            <div class="jumbotron">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+				
+	</body>
+</html>
