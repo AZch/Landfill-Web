@@ -95,7 +95,7 @@
         $conn = $app['db'];
 
         $data = array(
-            'edit' => true
+            'edit' => $id != false
         );
 
         if ($id != false) {

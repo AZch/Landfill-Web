@@ -33,6 +33,7 @@ landfill = {
                     wnd.alert(json.message);
                 else
                     location.reload();
+                location.reload();
             }
         });
     },
