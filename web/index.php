@@ -137,7 +137,6 @@
     }
 
     function edit($edit, $id, Request $req) {
-        debug_to_console('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa');
         global $app;
         $conn = $app['db'];
         debug_to_console($req);
@@ -179,7 +178,6 @@
     }
 
     $app->post('/landfilla', function(Request $req) use($app) {
-        debug_to_console('a');
         return edit(false, -1, $req);
     });
 
